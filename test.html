@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="build/build.js"></script>
+  <script>
+    var requestInterval = require('request-interval');
+    var start = Date.now();
+
+    var id = requestInterval(300, function() {
+      console.log(Date.now() - start + ' should be > 300');
+      start = Date.now();
+    });
+
+    setTimeout(function() {
+      console.log('clear');
+      requestInterval.clear(id);
+    }, 800);
+  </script>
+</head>
+<body>
+</body>
+</html>
