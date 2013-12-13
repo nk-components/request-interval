@@ -3,7 +3,7 @@
   "repo": "nk-components/request-interval",
   "description": "Like setInterval() but with requestAnimationFrame()",
   "version": "0.0.1",
-  "keywords": [],
+  "keywords": ["requestAnimationFrame", "setInterval"],
   "dependencies": {
     "component/raf": "*",
     "nk-components/time-now": "*"
