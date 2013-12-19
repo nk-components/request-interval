@@ -1,7 +1,9 @@
 
 # request-interval
 
-  Like setInterval() but with requestAnimationFrame()
+  Like setInterval() but with requestAnimationFrame().  
+
+  You can also find `requestTimeout` component [here](https://github.com/nk-components/request-timeout).
 
 ## Installation
 
@@ -24,3 +26,5 @@
 ## License
 
   MIT
+
+  Inspired by [Joe Lambert's Gist](https://gist.github.com/joelambert/1002116#file-requestinterval-js).
