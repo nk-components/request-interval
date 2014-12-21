@@ -2,7 +2,7 @@
   "name": "request-interval",
   "repo": "nk-components/request-interval",
   "description": "Like setInterval() but with requestAnimationFrame()",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "keywords": [
     "requestAnimationFrame",
     "setInterval"
