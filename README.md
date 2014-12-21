@@ -1,4 +1,4 @@
-# request-interval
+# request-interval [![Build Status](https://travis-ci.org/nk-components/request-interval.svg?branch=master)](https://travis-ci.org/nk-components/request-interval)
 
 Like `setInterval()` but using `requestAnimationFrame().`  
 You can also find `requestTimeout` component [here](https://github.com/nk-components/request-timeout).
