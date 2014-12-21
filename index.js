@@ -3,10 +3,8 @@
 var raf = require('raf');
 var now = require('time-now');
 
-
 exports = module.exports = interval;
-
-function interval(delay, fn) {
+function interval(delay, fn, ctx) {
   var start = now();
   var data = Object.create(null);
   data.id = raf(loop);
@@ -17,7 +15,7 @@ function interval(delay, fn) {
     data.id = raf(loop);
 
     if ((now() - start) >= delay) {
-      fn.call();
+      fn.call(ctx);
       start = now();
     }
   }
@@ -25,8 +23,6 @@ function interval(delay, fn) {
 
 
 exports.clear = clearInterval;
-
 function clearInterval(data) {
   raf.cancel(data.id);
 }
-
