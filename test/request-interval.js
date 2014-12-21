@@ -5,6 +5,17 @@ var assert = require('assert');
 var requestInterval = require('request-interval');
 
 describe('request-interval', function() {
+  it('should apply a context', function(done) {
+    this.timeout(20);
+
+    var ctx = {foo: 'bar'};
+    var id = requestInterval(10, function() {
+      assert(this.foo === 'bar');
+      requestInterval.clear(id);
+      done();
+    }, ctx);
+  });
+
   it('should be executed every 10ms', function(done) {
     this.timeout(70);
 
@@ -12,7 +23,7 @@ describe('request-interval', function() {
     var start = Date.now();
     var id = requestInterval(10, function() {
       var delta = Date.now() - start;
-      assert(delta > 10 && delta < 25);
+      assert(delta >= 10 && delta < 25);
       start = Date.now();
       numCalls++;
 
@@ -36,16 +47,5 @@ describe('request-interval', function() {
       assert(numCalls === 1);
       done();
     }, 50);
-  });
-
-  it('should apply a context', function(done) {
-    this.timeout(20);
-
-    var ctx = {foo: 'bar'};
-    var id = requestInterval(10, function() {
-      assert(this.foo === 'bar');
-      requestInterval.clear(id);
-      done();
-    }, ctx);
   });
 });
