@@ -22,9 +22,6 @@
   "bugs": {
     "url": "https://github.com/nk-components/request-interval/issues"
   },
-  "dependencies": {
-    "time-now": "^0.2.1"
-  },
   "devDependencies": {
     "browserify": "^13.0.0",
     "component-raf": "^1.2.0",

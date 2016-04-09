@@ -1,10 +1,8 @@
 'use strict';
 
-var now = require('time-now');
-
 exports = module.exports = interval;
 function interval(delay, fn) {
-  var start = now();
+  var start = Date.now();
   var data = {};
   data.id = requestAnimationFrame(loop);
 
@@ -13,9 +11,9 @@ function interval(delay, fn) {
   function loop() {
     data.id = requestAnimationFrame(loop);
 
-    if ((now() - start) >= delay) {
+    if (Date.now() - start >= delay) {
       fn();
-      start = now();
+      start = Date.now();
     }
   }
 }
