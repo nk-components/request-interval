@@ -1,8 +1,13 @@
 /*global describe, it */
 'use strict';
 
+var raf = require('raf');
 var assert = require('assert');
 var requestInterval = require('request-interval');
+
+// polyfill PhantomJS' raf
+window.requestAnimationFrame = raf;
+window.cancelAnimationFrame = raf.cancel;
 
 describe('request-interval', function() {
   it('should apply a context', function(done) {

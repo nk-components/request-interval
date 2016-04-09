@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run build && mocha-phantomjs ./test/runner.html",
-    "build": "browserify -d -r assert -r ./index.js:request-interval > bundle.js",
+    "build": "browserify -d -r raf -r assert -r ./index.js:request-interval > bundle.js",
     "watch": "onchange 'index.js' 'test/index.js' -- npm test"
   },
   "keywords": [
@@ -26,11 +26,12 @@
     "time-now": "^0.2.1"
   },
   "devDependencies": {
-    "browserify": "^7.0.2",
+    "browserify": "^13.0.0",
+    "component-raf": "^1.2.0",
     "mocha": "^2.0.1",
-    "mocha-phantomjs": "^3.5.2",
-    "onchange": "0.0.2",
-    "phantomjs": "^1.9.12"
+    "mocha-phantomjs": "^4.0.2",
+    "onchange": "^2.2.0",
+    "phantomjs": "^2.1.7"
   },
   "browser": {
     "raf": "component-raf"
