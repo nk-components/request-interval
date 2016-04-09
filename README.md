@@ -31,6 +31,8 @@ var id = requestInterval(300, function() {
 requestInterval.clear(id);
 ```
 
+If you need to support IE9, add a polyfill for `requestAnimationFrame()` and `cancelAnimationFrame()`
+
 ## License
 
 MIT

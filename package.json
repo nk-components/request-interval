@@ -23,7 +23,6 @@
     "url": "https://github.com/nk-components/request-interval/issues"
   },
   "dependencies": {
-    "component-raf": "^1.2.0",
     "time-now": "^0.2.1"
   },
   "devDependencies": {

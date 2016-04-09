@@ -8,7 +8,6 @@
     "setInterval"
   ],
   "dependencies": {
-    "component/raf": "*",
     "nk-components/time-now": "*"
   },
   "license": "MIT",
