@@ -7,10 +7,6 @@
     "requestAnimationFrame",
     "setInterval"
   ],
-  "dependencies": {
-    "component/raf": "*",
-    "nk-components/time-now": "*"
-  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [

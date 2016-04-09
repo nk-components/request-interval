@@ -1,22 +1,19 @@
 'use strict';
 
-var raf = require('raf');
-var now = require('time-now');
-
 exports = module.exports = interval;
-function interval(delay, fn, ctx) {
-  var start = now();
-  var data = Object.create(null);
-  data.id = raf(loop);
+function interval(delay, fn) {
+  var start = Date.now();
+  var data = {};
+  data.id = requestAnimationFrame(loop);
 
   return data;
 
   function loop() {
-    data.id = raf(loop);
+    data.id = requestAnimationFrame(loop);
 
-    if ((now() - start) >= delay) {
-      fn.call(ctx);
-      start = now();
+    if (Date.now() - start >= delay) {
+      fn();
+      start = Date.now();
     }
   }
 }
@@ -24,5 +21,5 @@ function interval(delay, fn, ctx) {
 
 exports.clear = clearInterval;
 function clearInterval(data) {
-  raf.cancel(data.id);
+  cancelAnimationFrame(data.id);
 }
