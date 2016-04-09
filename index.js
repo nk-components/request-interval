@@ -3,7 +3,7 @@
 var now = require('time-now');
 
 exports = module.exports = interval;
-function interval(delay, fn, ctx) {
+function interval(delay, fn) {
   var start = now();
   var data = {};
   data.id = requestAnimationFrame(loop);
@@ -14,7 +14,7 @@ function interval(delay, fn, ctx) {
     data.id = requestAnimationFrame(loop);
 
     if ((now() - start) >= delay) {
-      fn.call(ctx);
+      fn();
       start = now();
     }
   }

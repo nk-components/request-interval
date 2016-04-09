@@ -10,17 +10,6 @@ window.requestAnimationFrame = raf;
 window.cancelAnimationFrame = raf.cancel;
 
 describe('request-interval', function() {
-  it('should apply a context', function(done) {
-    this.timeout(20);
-
-    var ctx = {foo: 'bar'};
-    var id = requestInterval(10, function() {
-      assert(this.foo === 'bar');
-      requestInterval.clear(id);
-      done();
-    }, ctx);
-  });
-
   it('should be executed every 10ms', function(done) {
     this.timeout(70);
 
